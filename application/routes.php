@@ -39,6 +39,7 @@ Route::get('logout', array('as' => 'logout', 'uses' => 'users@logout'));
 
 Route::post('register', array('before'=>'csrf', 'uses'=>'users@create'));
 Route::post('login', array('before' => 'csrf', 'uses' => 'users@login'));
+Route::post('ask', array('before' => 'csrf', 'uses' => 'questions@create'));
 
 /*
 |--------------------------------------------------------------------------
