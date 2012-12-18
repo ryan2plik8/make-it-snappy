@@ -11,7 +11,8 @@ class Questions_Controller extends Base_Controller {
 	public function get_index() 
 	{
 		return View::make('questions.index')
-			->with('title', 'Make it snappy Q&A - Home');
+			->with('title', 'Make it snappy Q&A - Home')
+			->with('questions', Question::unsolved());
 	}
 
 	public function post_create()

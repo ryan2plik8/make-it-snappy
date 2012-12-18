@@ -9,4 +9,9 @@ class Question extends Basemodel {
 	{
 		return $this->belongs_to('User');
 	}
+
+	public static function unsolved()
+	{
+		return static::where('solved', '=', 0)->order_by('id', 'DESC')->paginate(3);
+	}
 }
