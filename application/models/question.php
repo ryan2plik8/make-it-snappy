@@ -12,6 +12,8 @@ class Question extends Basemodel {
 
 	public static function unsolved()
 	{
-		return static::where('solved', '=', 0)->order_by('id', 'DESC')->paginate(3);
+		return static::where('solved', '=', 0)
+					   ->order_by('id', 'DESC')
+					   ->paginate(3);
 	}
 }
