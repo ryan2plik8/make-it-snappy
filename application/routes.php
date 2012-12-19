@@ -36,6 +36,7 @@ Route::get('/', array('as'=>'home', 'uses'=>'questions@index'));
 Route::get('register', array('as' => 'register', 'uses'=>'users@new'));
 Route::get('login', array('as' => 'login', 'uses' => 'users@login'));
 Route::get('logout', array('as' => 'logout', 'uses' => 'users@logout'));
+Route::get('question/(:num)', array('as' => 'question', 'uses' => 'questions@view'));
 
 Route::post('register', array('before'=>'csrf', 'uses'=>'users@create'));
 Route::post('login', array('before' => 'csrf', 'uses' => 'users@login'));

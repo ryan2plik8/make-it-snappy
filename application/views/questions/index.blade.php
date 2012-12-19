@@ -33,7 +33,10 @@
 	@else
 		<ul>
 			@foreach($questions->results as $question)
-				<li>{{ e(Str::limit($question->question, 35)) }} by {{ $question->user->username }}</li>
+				<li>
+					{{ HTML::link_to_route('question', Str::limit($question->question, 35), $question->id) }} 
+					by {{ ucfirst($question->user->username) }}
+				</li>
 			@endforeach
 		<ul>
 		{{ $questions->links() }}

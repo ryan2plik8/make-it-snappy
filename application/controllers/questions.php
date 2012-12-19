@@ -29,4 +29,10 @@ class Questions_Controller extends Base_Controller {
 			return Redirect::to_route('home')->with_errors($validation)->with_input();
 		}
 	}
+
+	public function get_view($id = null) 
+	{
+		return View::make('questions.view')->with('title', 'Make It Snappy - View Question')
+										  ->with('question', Question::find($id));
+	}
 }
