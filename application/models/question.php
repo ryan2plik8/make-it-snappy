@@ -16,4 +16,9 @@ class Question extends Basemodel {
 					   ->order_by('id', 'DESC')
 					   ->paginate(3);
 	}
+	
+	public static function your_questions()
+	{
+		return static::where('user_id', '=', Auth::user()->id)->paginate(3);
+	}
 }

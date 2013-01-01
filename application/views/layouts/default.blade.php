@@ -18,6 +18,7 @@
 						<li>{{ HTML::link_to_route('login', 'Login') }}</li>
 					@else
 						<li>{{ HTML::link_to_route('logout', 'Logout ('.Auth::user()->username.')') }}</li>
+						<li>{{ HTML::link_to_route('your_questions', "Your Q's") }}</li>
 					@endif
 				</ul>
 			</div><!-- end nav -->

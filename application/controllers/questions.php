@@ -5,7 +5,7 @@ class Questions_Controller extends Base_Controller {
 
 	public function __contruct()
 	{
-		$this->filter('before', 'auth')->only(array('create'));
+		$this->filter('before', 'auth')->only(array('create', 'your_questions'));
 	}
 
 	public function get_index() 
@@ -35,4 +35,13 @@ class Questions_Controller extends Base_Controller {
 		return View::make('questions.view')->with('title', 'Make It Snappy - View Question')
 										  ->with('question', Question::find($id));
 	}
+	
+	public function get_your_questions() 
+	{
+		return View::make('questions.your_questions')
+			->with('title', 'Make it snappy Q&A - Your Questions')
+			->with('username', Auth::user()->username)
+			->with('questions', Question::your_questions());
+	}
+	
 }
